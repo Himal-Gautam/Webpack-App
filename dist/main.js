@@ -1,1 +1,0 @@
-(()=>{"use strict";console.log("Its just a Joke & that's the Joke")})();
