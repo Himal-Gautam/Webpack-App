@@ -1,0 +1,24 @@
+{
+  "name": "Webpack-App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Himal-Gautam/Webpack-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Himal-Gautam/Webpack-App/issues"
+  },
+  "homepage": "https://github.com/Himal-Gautam/Webpack-App#readme",
+  "devDependencies": {
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
