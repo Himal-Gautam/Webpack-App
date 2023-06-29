@@ -9,7 +9,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name][contenthash].js",
-    clean: "true",
+    clean: true,
+    assetModuleFilename: '[name][ext]'
   },
   devtool: "source-map",
   devServer: {
@@ -29,7 +30,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.scss$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -37,6 +38,10 @@ module.exports = {
             presets: ["@babel/preset-env"],
           },
         },
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
