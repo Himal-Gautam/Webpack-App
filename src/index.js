@@ -1,8 +1,8 @@
-import generateJoke from './generateJoke'
-import './styles/main.scss'
-import laughing from './assets/laughing.svg'
+import generateJoke from "./generateJoke";
+import "./styles/main.scss";
+import laughing from "./assets/laughing.svg";
 
-const laughImg = document.getElementsById('laughImg')
-laughImg.src = laughing
+const laughImg = document.getElementById("laughImg");
+laughImg.src = laughing;
 
-console.log(generateJoke())
+console.log(generateJoke());
