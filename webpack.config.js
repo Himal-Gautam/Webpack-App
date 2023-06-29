@@ -1,6 +1,5 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -12,10 +11,10 @@ module.exports = {
     filename: "[name][contenthash].js",
     clean: "true",
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist')
+      directory: path.resolve(__dirname, "dist"),
     },
     port: 3000,
     open: true,
@@ -29,13 +28,23 @@ module.exports = {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack App',
-      filename: 'index.html',
-      template: 'src/template.html'
-    })
-  ]
+      title: "Webpack App",
+      filename: "index.html",
+      template: "src/template.html",
+    }),
+  ],
 };
